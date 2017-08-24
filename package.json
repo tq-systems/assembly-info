@@ -18,6 +18,10 @@
     "AssemblyInfo.cs",
     "Visual Studio"
   ],
-  "author": "Thomas Waldecker",
+  "author": "Thomas Waldecker <thomas.waldecker@tq-group.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wald-tq/assembly-info.git"
+  },
   "license": "MIT"
 }
