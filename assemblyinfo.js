@@ -1,7 +1,5 @@
 ﻿const fs = require('fs');
 
-var path = 'test/AssemblyInfo.cs';
-
 var keywords = {
     "AssemblyTitle": null,
     "AssemblyDescription": null,
