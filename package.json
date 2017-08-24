@@ -1,0 +1,23 @@
+{
+  "name": "assembly-info",
+  "version": "1.0.0",
+  "description": "A library to parse AssemblyInfo.cs file from a C# project",
+  "main": "assemblyinfo.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "C#",
+    "AssemblyInfo.cs",
+    "Visual Studio"
+  ],
+  "author": "Thomas Waldecker",
+  "license": "MIT"
+}
