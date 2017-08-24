@@ -17,6 +17,24 @@ var keywords = {
     "InternalsVisibleTo": null,
 }
 
+function parse(data, keywords) {
+    Object.keys(keywords).forEach((value) => {
+        var res = data.match(new RegExp(value+"\\(\"([^\"]+?)\"\\)"));
+        if(res && res[1]){
+            keywords[value] = res[1];
+        }
+    });
+}
+
+function readSync(path) {
+
+    var data = fs.readFileSync(path, 'utf8');
+
+    parse(data, keywords);
+
+    return keywords;
+}
+
 function read(path, callback) {
 
     fs.readFile(path, 'utf8', (err, data) => {
@@ -24,12 +42,7 @@ function read(path, callback) {
             console.error(err);
         }
 
-        Object.keys(keywords).forEach((value) => {
-            var res = data.match(new RegExp(value+"\\(\"([^\"]+?)\"\\)"));
-            if(res && res[1]){
-                keywords[value] = res[1];
-            }
-        });
+        parse(data, keywords)
 
         callback(keywords);
     });
@@ -37,6 +50,7 @@ function read(path, callback) {
 
 var assemblyinfo = {
     read: read,
+    readSync: readSync
 }
 
 module.exports = assemblyinfo;
